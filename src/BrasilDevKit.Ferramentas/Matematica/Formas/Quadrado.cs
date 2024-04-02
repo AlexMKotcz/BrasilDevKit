@@ -7,4 +7,9 @@ public class Quadrado(double lado) : IFormaGeometrica
     {
         return Lado * Lado;
     }
+
+    public double CalcularPerimetro()
+    {
+        return Lado * 4;
+    }
 }

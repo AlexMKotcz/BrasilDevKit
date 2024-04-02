@@ -1,20 +1,19 @@
 namespace BrasilDevKit.Ferramentas.Matematica.Area;
 
 // Implementação de uma forma geométrica específica: Paralelogramo
-public class Paralelogramo : IFormaGeometrica
+public class Paralelogramo(double @base, double altura) : IFormaGeometrica
 {
-    public double Base { get; }
-    public double Altura { get; }
-
-    public Paralelogramo(double @base, double altura)
-    {
-        Base = @base;
-        Altura = altura;
-    }
+    public double Base { get; } = @base;
+    public double Altura { get; } = altura;
 
     public double CalcularArea()
     {
         return Base * Altura;
+    }
+
+    public double CalcularPerimetro()
+    {
+        return 2 * (Base + Altura);
     }
 }
 

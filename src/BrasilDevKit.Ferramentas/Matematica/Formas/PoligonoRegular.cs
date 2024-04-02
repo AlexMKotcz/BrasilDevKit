@@ -15,4 +15,9 @@ public class PoligonoRegular(int numeroLados, double lado) : IFormaGeometrica
     {
         return NumeroLados * Lado * Apotema / 2;
     }
+
+    public double CalcularPerimetro()
+    {
+        return NumeroLados * Lado;
+    }
 }

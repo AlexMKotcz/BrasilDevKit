@@ -9,5 +9,10 @@ public class Losango(double diagonalMaior, double diagonalMenor) : IFormaGeometr
     {
         return DiagonalMaior * DiagonalMenor / 2;
     }
+
+    public double CalcularPerimetro()
+    {
+        return 2 * Math.Sqrt(Math.Pow(DiagonalMaior, 2) + Math.Pow(DiagonalMenor, 2));
+    }
 }
 

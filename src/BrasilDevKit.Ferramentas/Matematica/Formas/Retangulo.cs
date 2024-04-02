@@ -9,4 +9,9 @@ public class Retangulo(double largura, double altura) : IFormaGeometrica
     {
         return Largura * Altura;
     }
+
+    public double CalcularPerimetro()
+    {
+        return 2 * (Largura + Altura);
+    }
 }

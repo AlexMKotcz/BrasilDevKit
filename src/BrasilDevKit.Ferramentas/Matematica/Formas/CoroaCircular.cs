@@ -12,7 +12,7 @@ public class CoroaCircular(double raioExterno, double raioInterno) : IFormaGeome
 
     public double CalcularPerimetro()
     {
-        throw new NotImplementedException();
+        return 2 * Math.PI * (RaioExterno + RaioInterno);
     }
 }
 

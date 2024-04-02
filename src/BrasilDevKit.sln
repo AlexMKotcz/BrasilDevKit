@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BE8EE129-1984-4482-A564-A51BC0EC2AAF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Ferramentas", "src\BrasilDevKit.Ferramentas\BrasilDevKit.Ferramentas.csproj", "{75E1EAC7-E910-4FC7-9A5C-B7D5513F4D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Ferramentas", "BrasilDevKit.Ferramentas\BrasilDevKit.Ferramentas.csproj", "{75E1EAC7-E910-4FC7-9A5C-B7D5513F4D89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
