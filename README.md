@@ -1,7 +1,7 @@
 # BrasilDevKit
 BrasilDevKit é um projeto de software que visa auxiliar desenvolvedores brasileiros, oferecendo ferramentas úteis diretamente em seus navegadores, computadores, smartphones e IDEs. Inspirado em plataformas existentes, o BrasilDevKit busca disponibilizar ferramentas que atendam às necessidades específicas da comunidade de desenvolvedores no Brasil.
 
-## Funcionalidades
+## Funcionalidades previstas
 - Geradores e validadores de documentos, como CPF e CNPJ;
 - Calculadoras;
 - Sorteadores;
