@@ -12,7 +12,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(10)));
 
-        Assert.True(dias == 10);
+        Assert.Equal(10, dias);
     }
 
     [Fact]
@@ -22,7 +22,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(-10)));
 
-        Assert.True(dias == 10);
+        Assert.Equal(10, dias);
     }
 
     [Fact]
@@ -32,7 +32,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(100)));
 
-        Assert.True(dias == 100);
+        Assert.Equal(100, dias);
     }
 
     [Fact]
@@ -42,7 +42,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(-100)));
 
-        Assert.True(dias == 100);
+        Assert.Equal(100, dias);
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(5)));
 
-        Assert.False(dias == 10);
+        Assert.NotEqual(10, dias);
     }
 
     [Fact]
@@ -62,7 +62,7 @@ public class CalculadoraDeDataTest
             DateOnly.FromDateTime(DateTime.Now),
             DateOnly.FromDateTime(DateTime.Now.AddDays(0)));
 
-        Assert.True(dias == 0);
+        Assert.Equal(0, dias);
     }
 
     [Fact]
@@ -72,7 +72,7 @@ public class CalculadoraDeDataTest
             new DateOnly(2024, 03, 28),
             new DateOnly(2024, 04, 04));
 
-        Assert.True(dias == 7);
+        Assert.Equal(7, dias);
     }
     #endregion
 
