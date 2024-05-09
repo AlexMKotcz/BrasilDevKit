@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Computacao.Validadores;
+namespace BrasilDevKit.Ferramentas.Auxiliares;
 
 internal static partial class Regexes
 {

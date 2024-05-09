@@ -1,4 +1,6 @@
-namespace BrasilDevKit.Ferramentas.Computacao.Validadores;
+using BrasilDevKit.Ferramentas.Auxiliares;
+
+namespace BrasilDevKit.Ferramentas.Computacao.Validadores.Documentos;
 
 /// <summary>
 /// Representa um validador para números de CPF (Cadastro de Pessoas Físicas).

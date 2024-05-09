@@ -1,4 +1,6 @@
-namespace BrasilDevKit.Ferramentas.Computacao.Validadores;
+using BrasilDevKit.Ferramentas.Auxiliares;
+
+namespace BrasilDevKit.Ferramentas.Computacao.Validadores.Documentos;
 
 /// <summary>
 /// Classe responsável por validar um CNPJ (Cadastro Nacional de Pessoa Jurídica).
