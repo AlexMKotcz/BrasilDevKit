@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
 // Implementação de uma forma geométrica específica: Pentágono
 public class Pentagono(double lado) : IFormaGeometrica

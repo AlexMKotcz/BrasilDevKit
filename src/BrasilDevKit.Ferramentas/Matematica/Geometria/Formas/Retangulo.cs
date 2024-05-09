@@ -1,8 +1,8 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
-public class Retangulo(double largura, double altura) : IFormaGeometrica
+public class Retangulo(double @base, double altura) : IFormaGeometrica
 {
-    public double Largura { get; } = largura;
+    public double Largura { get; } = @base;
     public double Altura { get; } = altura;
 
     public double CalcularArea()

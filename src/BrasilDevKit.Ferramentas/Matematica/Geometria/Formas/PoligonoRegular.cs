@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
 public class PoligonoRegular(int numeroLados, double lado) : IFormaGeometrica
 {
