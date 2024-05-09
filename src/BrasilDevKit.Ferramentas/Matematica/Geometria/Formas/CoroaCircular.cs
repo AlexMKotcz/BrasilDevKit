@@ -1,9 +1,18 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
-public class CoroaCircular(double raioExterno, double raioInterno) : IFormaGeometrica
+public class CoroaCircular : IFormaGeometrica
 {
-    public double RaioExterno { get; } = raioExterno;
-    public double RaioInterno { get; } = raioInterno;
+    public double RaioExterno { get; }
+    public double RaioInterno { get; }
+
+    public CoroaCircular(double raioExterno, double raioInterno)
+    {
+        if (raioInterno >= raioExterno)
+            throw new ArgumentException("O raio interno deve ser menor que o raio externo.");
+
+        RaioExterno = raioExterno;
+        RaioInterno = raioInterno;
+    }
 
     public double CalcularArea()
     {
