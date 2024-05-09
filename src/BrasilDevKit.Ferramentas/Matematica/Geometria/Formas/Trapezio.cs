@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
 public class Trapezio(double baseMaior, double baseMenor, double altura) : IFormaGeometrica
 {
@@ -11,10 +11,9 @@ public class Trapezio(double baseMaior, double baseMenor, double altura) : IForm
         return (BaseMaior + BaseMenor) * Altura / 2;
     }
 
+    //TODO: implementação do método CalcularPerimetro() para Trapezio
     public double CalcularPerimetro()
     {
-        double lado1 = Math.Abs(BaseMaior - BaseMenor) / 2;
-        double hipotenusa = Math.Sqrt(Math.Pow(lado1, 2) + Math.Pow(Altura, 2));
-        return BaseMaior + BaseMenor + 2 * hipotenusa;
+        throw new NotImplementedException("TODO: Implementar método CalcularPerimetro() para Trapezio");
     }
 }

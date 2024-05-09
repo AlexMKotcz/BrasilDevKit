@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Matematica.Area;
+namespace BrasilDevKit.Ferramentas.Matematica.Geometria.Formas;
 
 // Implementação de uma forma geométrica específica: Elipse
 public class Elipse(double semiEixoMaior, double semiEixoMenor) : IFormaGeometrica
@@ -15,7 +15,9 @@ public class Elipse(double semiEixoMaior, double semiEixoMenor) : IFormaGeometri
     /// Cálculo aproximado do perímetro de uma elipse.
     /// </summary>
     /// <remarks>
-    /// Referência: <see href="https://www.omnicalculator.com/pt/matematica/calculadora-perimetro#formula-do-perimetro-de-uma-elipse"/> 
+    /// Referência: <see href="https://www.omnicalculator.com/pt/matematica/calculadora-perimetro#formula-do-perimetro-de-uma-elipse"/>
+    /// <br/>
+    /// Referência 2: <see href="https://stackoverflow.com/questions/42310956/how-to-calculate-the-perimeter-of-an-ellipse"/>
     /// </remarks>
     /// <returns></returns>
     public double CalcularPerimetro()
@@ -23,8 +25,7 @@ public class Elipse(double semiEixoMaior, double semiEixoMenor) : IFormaGeometri
         double a = SemiEixoMenor;
         double b = SemiEixoMaior;
 
-        double h = Math.Pow(a - b, 2) / Math.Pow(a + b, 2);
-        return Math.PI * (a + b) * ((1 + (3 * h)) / (10 + Math.Sqrt(4 - (3 * h))));
+        return Math.PI * (3 * (a + b) - Math.Sqrt((3 * a + b) * (a + 3 * b)));
     }
 }
 
