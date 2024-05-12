@@ -11,9 +11,11 @@ public class Trapezio(double baseMaior, double baseMenor, double altura) : IForm
         return (BaseMaior + BaseMenor) * Altura / 2;
     }
 
-    //TODO: implementação do método CalcularPerimetro() para Trapezio
     public double CalcularPerimetro()
     {
-        throw new NotImplementedException("TODO: Implementar método CalcularPerimetro() para Trapezio");
+        double altura = Math.Pow(Altura, 2);
+        double diferencaBases = Math.Pow(BaseMaior - BaseMenor, 2);
+        double tamanhoUltimoLado = Math.Sqrt(altura + diferencaBases);
+        return BaseMaior + BaseMenor + Altura + tamanhoUltimoLado;
     }
 }
