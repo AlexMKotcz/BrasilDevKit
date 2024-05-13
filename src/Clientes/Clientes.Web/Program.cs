@@ -1,6 +1,6 @@
-using BrasilDevKit.Web.Components;
+using Clientes.Web.Components;
 
-namespace BrasilDevKit.Web;
+namespace Clientes.Web;
 public class Program
 {
     public static void Main(string[] args)
