@@ -1,0 +1,52 @@
+﻿@page "/calculadoras/datas"
+@using Clientes.Auxiliares
+
+<h3>Calculadora de datas</h3>
+
+<div class="container">
+<InputRadioGroup @bind-Value="TipoCalculo" @bind-Value:after="StateHasChanged">
+    <InputRadio Value="TipoCalculo.DiferencaDatas.ToString()" /> Diferença entre datas
+    <InputRadio Value="TipoCalculo.AdicionarDias.ToString()" /> Adicionar dias
+    <InputRadio Value="TipoCalculo.SubtrairDias.ToString()" /> Subtrair dias
+</InputRadioGroup>
+</div>
+
+<div class="container">
+    <div class="form-group">
+        <label for="dataInicial">Data inicial</label>
+        <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial"/>
+    </div>
+    @if (TipoCalculo == TipoCalculo.AdicionarDias || TipoCalculo == TipoCalculo.SubtrairDias)
+    {
+        <div class="form-group">
+            <label for="diasOperacao">Dias</label>
+            <InputNumber id="diasOperacao" class="form-control" @bind-Value="DiasOperacao"/>
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <label for="dataFinal">Data final</label>
+            <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinal" />
+        </div>        
+    }
+
+    @(TipoCalculo.ToString())
+</div>
+
+
+@code {
+
+    [SupplyParameterFromForm]
+    private DateOnly DataInicial { get; set; }
+    [SupplyParameterFromForm]
+    private DateOnly DataFinal { get; set; }
+    [SupplyParameterFromForm]
+    private int DiasOperacao { get; set; }
+
+    private TipoCalculo TipoCalculo { get; set; } = TipoCalculo.DiferencaDatas;
+
+    private void Calcular()
+    {
+    }
+}
