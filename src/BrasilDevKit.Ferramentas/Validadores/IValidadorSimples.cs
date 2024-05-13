@@ -1,4 +1,4 @@
-namespace BrasilDevKit.Ferramentas.Computacao.Validadores;
+namespace BrasilDevKit.Ferramentas.Validadores;
 
 /// <summary>
 /// Define um contrato para validadores simples.
