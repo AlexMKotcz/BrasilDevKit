@@ -1,6 +1,8 @@
 ﻿using UIKit;
+using BrasilDevKit.Multiplatforma.Platforms.iOS;
+using BrasilDevKit.Multiplatforma;
 
-namespace BrasilDevKit.Multiplatforma;
+namespace BrasilDevKit.Multiplatforma.Platforms.iOS;
 public class Program
 {
     // This is the main entry point of the application.

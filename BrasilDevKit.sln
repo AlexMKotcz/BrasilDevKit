@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Ferramentas.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clientes", "Clientes", "{C7284349-1084-4C50-980A-A5D8EF32C6B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Multiplatforma", "src\Clientes\BrasilDevKit.Multiplatforma\BrasilDevKit.Multiplatforma.csproj", "{AC1EE18E-92E5-49B5-97BF-B58A8D2ADC4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Multiplataforma", "src\Clientes\BrasilDevKit.Multiplataforma\BrasilDevKit.Multiplataforma.csproj", "{AC1EE18E-92E5-49B5-97BF-B58A8D2ADC4A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilDevKit.Web", "src\Clientes\BrasilDevKit.Web\BrasilDevKit.Web.csproj", "{BFCAAB8B-BEC6-4FAE-8DF6-4A565FACBA68}"
 EndProject

@@ -1,6 +1,7 @@
 ﻿using Foundation;
+using BrasilDevKit.Multiplatforma;
 
-namespace BrasilDevKit.Multiplatforma;
+namespace BrasilDevKit.Multiplatforma.Platforms.MacCatalyst;
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
 {

@@ -1,6 +1,8 @@
 ﻿using UIKit;
+using BrasilDevKit.Multiplatforma.Platforms.MacCatalyst;
+using BrasilDevKit.Multiplatforma;
 
-namespace BrasilDevKit.Multiplatforma;
+namespace BrasilDevKit.Multiplatforma.Platforms.MacCatalyst;
 public class Program
 {
     // This is the main entry point of the application.
