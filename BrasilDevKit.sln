@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clientes.Web", "src\Cliente
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrasilDevKit.VisualStudio", "src\Clientes\BrasilDevKit.VisualStudio\BrasilDevKit.VisualStudio.csproj", "{1ABE109C-6477-4559-9C0B-461878C542F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.Web.Auxiliares", "src\Clientes\Clientes.Web.Componentes\Clientes.Web.Auxiliares.csproj", "{8AB2F832-FF9D-4011-8C61-954E411BF417}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clientes.Web.Auxiliares", "src\Clientes\Clientes.Web.Componentes\Clientes.Web.Auxiliares.csproj", "{8AB2F832-FF9D-4011-8C61-954E411BF417}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

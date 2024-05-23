@@ -2,12 +2,12 @@
 
 namespace Clientes.Web.Auxiliares.Enumeradores;
 
-public enum TipoCalculo
+public enum TipoCalculoData
 {
     [Description("Diferença entre datas")]
-    DiferencaDatas,
+    Diferenca,
     [Description("Adicionar dias")]
-    AdicionarDias,
+    Adicionar,
     [Description("Subtrair dias")]
-    SubtrairDias
+    Subtrair
 }

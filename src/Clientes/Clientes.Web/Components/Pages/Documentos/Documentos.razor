@@ -1,0 +1,12 @@
+﻿@page "/documentos"
+@using Clientes.Web.Auxiliares.Enumeradores
+
+<h3>Documentos</h3>
+
+<div class="container-fluid">
+    <Clientes.Web.Auxiliares.Componentes.Documentos.OperacaoDocumento TipoDocumento="TipoDocumento.CadastroPessoaFisica" />
+    <Clientes.Web.Auxiliares.Componentes.Documentos.OperacaoDocumento TipoDocumento="TipoDocumento.CadastroNacionalPessoaJuridica" />
+</div>
+
+@code {
+}
