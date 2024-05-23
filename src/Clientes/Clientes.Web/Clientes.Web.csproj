@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Clientes.Web.Componentes\Clientes.Web.Auxiliares.csproj" />
+  </ItemGroup>
+
 </Project>

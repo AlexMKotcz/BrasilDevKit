@@ -1,0 +1,84 @@
+﻿@using BrasilDevKit.Ferramentas.Matematica.Datas
+
+@rendermode InteractiveServer
+
+<h5>@TipoCalculo.ObterDescricao()</h5>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <label for="dataInicial">Data inicial</label>
+            <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial" @bind-Value:after="Calcular" />
+        </div>
+        @if (TipoCalculo == TipoCalculo.DiferencaDatas)
+        {
+            <div class="col">
+                <label for="dataFinal">Data final</label>
+                <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinal" @bind-Value:after="Calcular" />
+            </div>
+        }
+        else
+        {
+            <div class="col">
+                <label for="diasOperacao">Dias à @(TipoCalculo == TipoCalculo.AdicionarDias ? "adicionar" : "subtrair")</label>
+                <InputNumber id="diasOperacao" class="form-control" @bind-Value="Dias" @bind-Value:after="Calcular" />
+            </div>
+        }
+    </div>
+    <div class="justify-content-center d-flex mt-2">
+        @if (TipoCalculo == TipoCalculo.DiferencaDatas)
+        {
+            <h6>Diferença de @Dias dias.</h6>
+        }
+        else
+        {
+            <h6>Nova data: @DataFinal.</h6>
+        }
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public TipoCalculo TipoCalculo { get; set; }
+
+    const byte diasPadrao = 10;
+
+    [SupplyParameterFromForm]
+    private DateOnly DataInicial { get; set; } = DateOnly.FromDateTime(DateTime.Today);
+    [SupplyParameterFromForm]
+    private DateOnly DataFinal { get; set; } = DateOnly.FromDateTime(DateTime.Today.AddDays(diasPadrao));
+    private int Dias { get; set; } = diasPadrao;
+
+    private void Calcular()
+    {
+        switch (TipoCalculo)
+        {
+            case TipoCalculo.DiferencaDatas:
+                CalcularDiferencaDatas();
+                break;
+            case TipoCalculo.AdicionarDias:
+                CalcularAdicionarDias();
+                break;
+            case TipoCalculo.SubtrairDias:
+                CalcularSubtrairDias();
+                break;
+            default:
+                throw new ArgumentException("Tipo de cálculo inválido.");
+
+        }
+    }
+
+    private void CalcularDiferencaDatas()
+    {
+        Dias = CalculadoraDeData.CalcularDias(DataInicial, DataFinal);
+    }
+    private void CalcularAdicionarDias()
+    {
+        DataFinal = CalculadoraDeData.SomarDias(DataInicial, Dias);
+    }
+    private void CalcularSubtrairDias()
+    {
+        DataFinal = CalculadoraDeData.SubtrairDias(DataInicial, Dias);
+    }
+}
