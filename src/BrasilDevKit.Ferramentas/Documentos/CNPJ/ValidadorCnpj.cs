@@ -1,4 +1,6 @@
-﻿using BrasilDevKit.Ferramentas.Auxiliares;
+﻿using System.Runtime.CompilerServices;
+
+using BrasilDevKit.Ferramentas.Auxiliares;
 
 namespace BrasilDevKit.Ferramentas.Documentos.CNPJ;
 
@@ -32,16 +34,10 @@ public sealed class ValidadorCnpj : IValidadorDocumento<CadastroNacionalPessoaJu
             return false;
 
         if (valor.TodosDigitosIguais())
-            return false;
+            return false;        
 
-        int[] cnpjArray = new int[14];
-        for (int i = 0; i < 12; i++)
-        {
-            cnpjArray[i] = int.Parse(valor[i].ToString());
-        }
-
-        int primeiroDigito = ObterPrimeiroDigitoVerificador(cnpjArray);
-        int segundoDigito = ObterSegundoDigitoVerificador(cnpjArray);
+        int primeiroDigito = ObterPrimeiroDigitoVerificador(valor);
+        int segundoDigito = ObterSegundoDigitoVerificador(valor + primeiroDigito);
 
         // Verificar se os dígitos calculados batem com os fornecidos
         if (primeiroDigito != int.Parse(valor[12].ToString()) || segundoDigito != int.Parse(valor[13].ToString()))
@@ -56,16 +52,16 @@ public sealed class ValidadorCnpj : IValidadorDocumento<CadastroNacionalPessoaJu
     /// </summary>
     /// <param name="cnpjSemDigitosVerificadores">Array contendo os dígitos do CNPJ, exceto os dígitos verificadores.</param>
     /// <returns>O primeiro dígito verificador do CNPJ.</returns>
-    internal static int ObterPrimeiroDigitoVerificador(int[] cnpjSemDigitosVerificadores)
+    internal static int ObterPrimeiroDigitoVerificador(string numero)
     {
         int soma = 0;
         for (int i = 0; i < 12; i++)
         {
-            soma += cnpjSemDigitosVerificadores[i] * MultiplicadoresPrimeiroDigito[i];
+            soma += int.Parse(numero[i].ToString()) * MultiplicadoresPrimeiroDigito[i];
         }
+
         int resto = soma % 11;
-        int primeiroDigito = resto < 2 ? 0 : 11 - resto;
-        return primeiroDigito;
+        return resto < 2 ? 0 : 11 - resto;
     }
 
     /// <summary>
@@ -73,15 +69,15 @@ public sealed class ValidadorCnpj : IValidadorDocumento<CadastroNacionalPessoaJu
     /// </summary>
     /// <param name="cnpjSemDigitosVerificadores">Array contendo os dígitos do CNPJ, exceto os dígitos verificadores.</param>
     /// <returns>O segundo dígito verificador do CNPJ.</returns>
-    internal static int ObterSegundoDigitoVerificador(int[] cnpjSemDigitosVerificadores)
+    internal static int ObterSegundoDigitoVerificador(string numero)
     {
         int soma = 0;
         for (int i = 0; i < 13; i++)
         {
-            soma += cnpjSemDigitosVerificadores[i] * MultiplicadoresSegundoDigito[i];
+            soma += int.Parse(numero[i].ToString()) * MultiplicadoresSegundoDigito[i];
         }
+
         int resto = soma % 11;
-        int segundoDigito = resto < 2 ? 0 : 11 - resto;
-        return segundoDigito;
+        return resto < 2 ? 0 : 11 - resto;
     }
 }

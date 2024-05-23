@@ -13,19 +13,17 @@ public sealed class GeradorCpf : IGeradorDocumento<CadastroPessoaFisica>
     {
         Random random = new();
 
-        int[] cpfArray = new int[11];
+        int[] cpfArray = new int[9];
         for (int i = 0; i < 9; i++)
         {
             cpfArray[i] = random.Next(0, 9);
         }
 
-        int primeiroDigito = ValidadorCpf.ObterPrimeiroDigitoVerificador(cpfArray);
-        int segundoDigito = ValidadorCpf.ObterSegundoDigitoVerificador(cpfArray);
-
-        cpfArray[9] = primeiroDigito;
-        cpfArray[10] = segundoDigito;
-
         string cpf = string.Join(string.Empty, cpfArray);
-        return new CadastroPessoaFisica(cpf);
+
+        int primeiroDigito = ValidadorCpf.ObterPrimeiroDigitoVerificador(cpf);
+        int segundoDigito = ValidadorCpf.ObterSegundoDigitoVerificador(cpf + primeiroDigito);
+
+        return new CadastroPessoaFisica(cpf + primeiroDigito + segundoDigito);
     }
 }

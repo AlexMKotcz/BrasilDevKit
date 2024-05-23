@@ -36,17 +36,11 @@ public sealed class ValidadorCpf : IValidadorDocumento<CadastroPessoaFisica>
         if (valor.TodosDigitosIguais())
             return false;
 
-        int[] cpfArray = new int[9];
-        for (int i = 0; i < 9; i++)
-        {
-            cpfArray[i] = int.Parse(valor[i].ToString());
-        }
-
-        int primeiroDigitoVerificador = ObterPrimeiroDigitoVerificador(cpfArray);
-        int segundoDigitoVerificador = ObterSegundoDigitoVerificador(cpfArray);
+        int primeiroDigitoVerificador = ObterPrimeiroDigitoVerificador(valor);
+        int segundoDigitoVerificador = ObterSegundoDigitoVerificador(valor + primeiroDigitoVerificador);
 
         // Verificar se os dígitos calculados batem com os fornecidos
-        if (primeiroDigitoVerificador != int.Parse(valor[10].ToString()) || segundoDigitoVerificador != int.Parse(valor[11].ToString()))
+        if (primeiroDigitoVerificador != int.Parse(valor[9].ToString()) || segundoDigitoVerificador != int.Parse(valor[10].ToString()))
             return false;
 
         // Se passou por todas as verificações, retorna true
@@ -58,12 +52,12 @@ public sealed class ValidadorCpf : IValidadorDocumento<CadastroPessoaFisica>
     /// </summary>
     /// <param name="cpfSemDigitosVerificadores">Array do CPF sem os dígitos verificadores.</param>
     /// <returns>O primeiro dígito verificador do CPF.</returns>
-    internal static int ObterPrimeiroDigitoVerificador(int[] cpfSemDigitosVerificadores)
+    internal static int ObterPrimeiroDigitoVerificador(string numero)
     {
         int soma = 0;
-        for (int i = 0; i < cpfSemDigitosVerificadores.Length; i++)
+        for (int i = 0; i < 9; i++)
         {
-            soma += cpfSemDigitosVerificadores[i] * MultiplicadoresPrimeiroDigito[i];
+            soma += int.Parse(numero[i].ToString()) * MultiplicadoresPrimeiroDigito[i];
         }
 
         int resto = soma % 11;
@@ -76,12 +70,12 @@ public sealed class ValidadorCpf : IValidadorDocumento<CadastroPessoaFisica>
     /// </summary>
     /// <param name="cpfSemDigitosVerificadores">Array do CPF sem os dígitos verificadores.</param>
     /// <returns>O segundo dígito verificador do CPF.</returns>
-    internal static int ObterSegundoDigitoVerificador(int[] cpfSemDigitosVerificadores)
+    internal static int ObterSegundoDigitoVerificador(string numero)
     {
         int soma = 0;
-        for (int i = 0; i < cpfSemDigitosVerificadores.Length; i++)
+        for (int i = 0; i < 10; i++)
         {
-            soma += cpfSemDigitosVerificadores[i] * MultiplicadoresSegundoDigito[i];
+            soma += int.Parse(numero[i].ToString()) * MultiplicadoresSegundoDigito[i];
         }
 
         int resto = soma % 11;

@@ -13,19 +13,17 @@ public sealed class GeradorCnpj : IGeradorDocumento<CadastroNacionalPessoaJuridi
     {
         Random random = new();
 
-        int[] cnpjArray = new int[14];
+        int[] cnpjArray = new int[12];
         for (int i = 0; i < 12; i++)
         {
             cnpjArray[i] = random.Next(0, 9);
         }
 
-        int primeiroDigito = ValidadorCnpj.ObterPrimeiroDigitoVerificador(cnpjArray);
-        int segundoDigito = ValidadorCnpj.ObterSegundoDigitoVerificador(cnpjArray);
-
-        cnpjArray[13] = primeiroDigito;
-        cnpjArray[14] = segundoDigito;
-
         string cnpj = string.Join(string.Empty, cnpjArray);
-        return new CadastroNacionalPessoaJuridica(cnpj);
+
+        int primeiroDigito = ValidadorCnpj.ObterPrimeiroDigitoVerificador(cnpj);
+        int segundoDigito = ValidadorCnpj.ObterSegundoDigitoVerificador(cnpj + primeiroDigito);
+
+        return new CadastroNacionalPessoaJuridica(cnpj+primeiroDigito+segundoDigito);
     }
 }
