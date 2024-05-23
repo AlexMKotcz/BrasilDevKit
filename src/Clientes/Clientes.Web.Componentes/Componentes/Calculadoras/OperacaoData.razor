@@ -1,6 +1,6 @@
-﻿@using Clientes.Auxiliares
-@using Clientes.Auxiliares.Extensoes
-@using BrasilDevKit.Ferramentas.Matematica.Datas;
+﻿@using BrasilDevKit.Ferramentas.Matematica.Datas
+
+@rendermode InteractiveServer
 
 <h5>@TipoCalculo.ObterDescricao()</h5>
 
@@ -8,20 +8,20 @@
     <div class="row">
         <div class="col">
             <label for="dataInicial">Data inicial</label>
-            <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial" @onchange="Calcular" />
+            <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial" @bind-Value:after="Calcular" />
         </div>
         @if (TipoCalculo == TipoCalculo.DiferencaDatas)
         {
             <div class="col">
                 <label for="dataFinal">Data final</label>
-                <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinal" @onchange="Calcular" />
+                <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinal" @bind-Value:after="Calcular" />
             </div>
         }
         else
         {
             <div class="col">
                 <label for="diasOperacao">Dias à @(TipoCalculo == TipoCalculo.AdicionarDias ? "adicionar" : "subtrair")</label>
-                <InputNumber id="diasOperacao" class="form-control" @bind-Value="Dias" @onchange="Calcular" />
+                <InputNumber id="diasOperacao" class="form-control" @bind-Value="Dias" @bind-Value:after="Calcular" />
             </div>
         }
     </div>

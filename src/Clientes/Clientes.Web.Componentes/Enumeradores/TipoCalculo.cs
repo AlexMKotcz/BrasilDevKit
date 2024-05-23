@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Clientes.Auxiliares;
+namespace Clientes.Web.Auxiliares.Enumeradores;
 
 public enum TipoCalculo
 {
