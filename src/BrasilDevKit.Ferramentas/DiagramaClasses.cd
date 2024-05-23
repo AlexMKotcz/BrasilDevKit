@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BrasilDevKit.Ferramentas.Auxiliares.ExtensoesString">
+    <Position X="33.5" Y="1.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Auxiliares\ExtensoesString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Auxiliares.Regexes">
+    <Position X="30" Y="1.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auxiliares\Regexes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Documentos.CadastroNacionalPessoaJuridica" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="9.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAIAACAAAAAQAAAgAgAAAAAAA=</HashCode>
+      <FileName>Documentos\CadastroNacionalPessoaJuridica.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Documentos.CadastroPessoaFisica" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="9.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAIAACAAAAAQAAAgAgAAAAAAA=</HashCode>
+      <FileName>Documentos\CadastroPessoaFisica.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Geradores.Gerador">
+    <Position X="25.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geradores\Gerador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Datas.CalculadoraDeData">
+    <Position X="41.25" Y="7" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Matematica\Datas\CalculadoraDeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Circulo" BaseTypeListCollapsed="true">
+    <Position X="1" Y="8.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Circulo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.CoroaCircular" BaseTypeListCollapsed="true">
+    <Position X="1" Y="12.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\CoroaCircular.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Elipse" BaseTypeListCollapsed="true">
+    <Position X="1" Y="15.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAABAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Elipse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Hexagono" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="12.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Hexagono.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Losango" BaseTypeListCollapsed="true">
+    <Position X="15" Y="13.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAIAAAAAAABAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Losango.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Paralelogramo" BaseTypeListCollapsed="true">
+    <Position X="15" Y="16.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAIAAAAAAAQAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Paralelogramo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Pentagono" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Pentagono.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.PoligonoRegular" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="15.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAIABAEIgAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\PoligonoRegular.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Quadrado" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="8.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Quadrado.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Retangulo" BaseTypeListCollapsed="true">
+    <Position X="15" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAQABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Retangulo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.SetorCircular" BaseTypeListCollapsed="true">
+    <Position X="1" Y="10.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAQAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\SetorCircular.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.Trapezio" BaseTypeListCollapsed="true">
+    <Position X="15" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAIADAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\Trapezio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.Formas.TrianguloRetangulo" BaseTypeListCollapsed="true">
+    <Position X="7" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAIAAAAAAAQAA=</HashCode>
+      <FileName>Matematica\Geometria\Formas\TrianguloRetangulo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.CalculadoraDeArea">
+    <Position X="5.25" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\CalculadoraDeArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Matematica.Geometria.CalculadoraDePerimetro">
+    <Position X="9.5" Y="1" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\CalculadoraDePerimetro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrasilDevKit.Ferramentas.Validadores.Validador">
+    <Position X="31.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Validadores\Validador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BrasilDevKit.Ferramentas.Geradores.IGeradorSimples">
+    <Position X="22.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geradores\IGeradorSimples.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrasilDevKit.Ferramentas.Matematica.Geometria.ICalculoArea">
+    <Position X="5.25" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\ICalculoArea.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrasilDevKit.Ferramentas.Matematica.Geometria.ICalculoPerimetro">
+    <Position X="9.5" Y="2.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\ICalculoPerimetro.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrasilDevKit.Ferramentas.Matematica.Geometria.IFormaGeometrica">
+    <Position X="8" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Matematica\Geometria\IFormaGeometrica.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BrasilDevKit.Ferramentas.Validadores.IValidadorSimples">
+    <Position X="29" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validadores\IValidadorSimples.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
