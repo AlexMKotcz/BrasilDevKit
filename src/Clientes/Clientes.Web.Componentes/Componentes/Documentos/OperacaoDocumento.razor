@@ -1,0 +1,49 @@
+﻿@using System.ComponentModel.DataAnnotations
+@rendermode InteractiveServer
+
+<div class="container-fluid">
+    <div class="text-center mt-4 mb-2">
+        <h4>@TipoDocumento.ObterDescricao()</h4>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-md-5 p-2 border">
+            <div class="text-center m-2 mb-5">
+                <h5>Validar documento</h5>
+                <InputText id="documento" @bind-Value="Documento" class="form-control w-50 mx-auto mt-3" placeholder="@TipoDocumento.ObterDescricao()" />
+                <button type="submit" class="btn btn-primary mx-auto my-2" @onclick="ValidarDocumento">Validar</button>
+
+                @if (!string.IsNullOrEmpty(ResultadoValidacao))
+                {
+                    <h6>Resultado: @ResultadoValidacao</h6>
+                }
+            </div>
+        </div>
+        <div class="col-md-5 p-2 border">
+            <div class="text-center m-2 mb-5">
+                <h5>Gerar documento</h5>
+                <button type="submit" class="btn btn-primary mx-auto mt-3" @onclick="GerarDocumento">Gerar</button>
+                @if (!string.IsNullOrEmpty(ResultadoGeracao))
+                {
+                    <h6>Resultado:</h6>
+                    <input type="text" disabled readonly @bind-value="ResultadoGeracao" class="form-control mx-auto my-2 w-50" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public TipoDocumento TipoDocumento { get; set; }
+
+    public string ResultadoValidacao { get; set; } = string.Empty;
+    public string ResultadoGeracao { get; set; } = string.Empty;
+
+    public string Documento { get; set; } = string.Empty;
+
+    public void ValidarDocumento()
+    {
+    }
+    public void GerarDocumento()
+    {
+    }
+}
