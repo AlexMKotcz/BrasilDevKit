@@ -1,16 +1,11 @@
-using BrasilDevKit.Ferramentas.Auxiliares;
-using BrasilDevKit.Ferramentas.Geradores;
-using BrasilDevKit.Ferramentas.Validadores;
+﻿using BrasilDevKit.Ferramentas.Auxiliares;
 
-namespace BrasilDevKit.Ferramentas.Documentos;
+namespace BrasilDevKit.Ferramentas.Documentos.CNPJ;
 
 /// <summary>
-/// Classe que representa o documento de CNPJ (Cadastro Nacional de Pessoa Jurídica).
+/// Classe responsável por validar um número de CNPJ.
 /// </summary>
-/// <remarks>
-/// Implementa um validador e gerador de documentos.
-/// </remarks>
-public class CadastroNacionalPessoaJuridica : IValidadorSimples, IGeradorSimples
+public sealed class ValidadorCnpj : IValidadorDocumento<CadastroNacionalPessoaJuridica>
 {
     /// <summary>
     /// Multiplicadores utilizados para o cálculo do primeiro dígito verificador do CNPJ.
@@ -22,16 +17,16 @@ public class CadastroNacionalPessoaJuridica : IValidadorSimples, IGeradorSimples
     private static int[] MultiplicadoresSegundoDigito { get; } = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
     /// <summary>
-    /// Valida um número de CNPJ.
+    /// Valida um CNPJ pelo seu número.
     /// </summary>
-    /// <param name="valor">O número de CNPJ a ser validado.</param>
+    /// <param name="documento">O CNPJ a ser validado.</param>
     /// <returns>True se o número de CNPJ é válido, caso contrário, False.</returns>
-    public bool Validar(string valor)
+    public static bool Validar(CadastroNacionalPessoaJuridica documento)
     {
-        if (string.IsNullOrWhiteSpace(valor))
+        if (string.IsNullOrWhiteSpace(documento.Numero))
             return false;
 
-        valor = valor.RemoverNaoNumericos();
+        string valor = documento.Numero.RemoverNaoNumericos();
 
         if (valor.Length != 14)
             return false;
@@ -61,7 +56,7 @@ public class CadastroNacionalPessoaJuridica : IValidadorSimples, IGeradorSimples
     /// </summary>
     /// <param name="cnpjSemDigitosVerificadores">Array contendo os dígitos do CNPJ, exceto os dígitos verificadores.</param>
     /// <returns>O primeiro dígito verificador do CNPJ.</returns>
-    private static int ObterPrimeiroDigitoVerificador(int[] cnpjSemDigitosVerificadores)
+    internal static int ObterPrimeiroDigitoVerificador(int[] cnpjSemDigitosVerificadores)
     {
         int soma = 0;
         for (int i = 0; i < 12; i++)
@@ -78,7 +73,7 @@ public class CadastroNacionalPessoaJuridica : IValidadorSimples, IGeradorSimples
     /// </summary>
     /// <param name="cnpjSemDigitosVerificadores">Array contendo os dígitos do CNPJ, exceto os dígitos verificadores.</param>
     /// <returns>O segundo dígito verificador do CNPJ.</returns>
-    private static int ObterSegundoDigitoVerificador(int[] cnpjSemDigitosVerificadores)
+    internal static int ObterSegundoDigitoVerificador(int[] cnpjSemDigitosVerificadores)
     {
         int soma = 0;
         for (int i = 0; i < 13; i++)
@@ -88,29 +83,5 @@ public class CadastroNacionalPessoaJuridica : IValidadorSimples, IGeradorSimples
         int resto = soma % 11;
         int segundoDigito = resto < 2 ? 0 : 11 - resto;
         return segundoDigito;
-    }
-
-    /// <summary>
-    /// Gera um número de CNPJ válido.
-    /// </summary>
-    /// <returns>Um número de CNPJ válido.</returns>
-    public string Gerar()
-    {
-        Random random = new();
-
-        int[] cnpjArray = new int[14];
-        for (int i = 0; i < 12; i++)
-        {
-            cnpjArray[i] = random.Next(0, 9);
-        }
-
-        int primeiroDigito = ObterPrimeiroDigitoVerificador(cnpjArray);
-        int segundoDigito = ObterSegundoDigitoVerificador(cnpjArray);
-
-        cnpjArray[13] = primeiroDigito;
-        cnpjArray[14] = segundoDigito;
-
-        string cnpj = string.Join(string.Empty, cnpjArray);
-        return cnpj;
     }
 }

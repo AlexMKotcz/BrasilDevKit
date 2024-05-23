@@ -1,16 +1,11 @@
-using BrasilDevKit.Ferramentas.Auxiliares;
-using BrasilDevKit.Ferramentas.Geradores;
-using BrasilDevKit.Ferramentas.Validadores;
+﻿using BrasilDevKit.Ferramentas.Auxiliares;
 
-namespace BrasilDevKit.Ferramentas.Documentos;
+namespace BrasilDevKit.Ferramentas.Documentos.CPF;
 
 /// <summary>
-/// Classe que representa o documento de CPF (Cadastro de Pessoa Física).
+/// Classe responsável por validar um CPF pelo seu número.
 /// </summary>
-/// <remarks>
-/// Implementa um validador e gerador de documentos.
-/// </remarks>
-public class CadastroPessoaFisica : IValidadorSimples, IGeradorSimples
+public sealed class ValidadorCpf : IValidadorDocumento<CadastroPessoaFisica>
 {
     /// <summary>
     /// Multiplicadores utilizados para o cálculo do primeiro dígito verificador do CPF.
@@ -22,12 +17,14 @@ public class CadastroPessoaFisica : IValidadorSimples, IGeradorSimples
     private static int[] MultiplicadoresSegundoDigito { get; } = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 
     /// <summary>
-    /// Valida um número de CPF.
+    /// Valida um CPF pelo seu número.
     /// </summary>
-    /// <param name="valor">O número de CPF a ser validado.</param>
-    /// <returns>True se o CPF é válido, caso contrário, False.</returns>
-    public bool Validar(string valor)
+    /// <param name="documento">O cpf.</param>
+    /// <returns>True se o CPF possui um número válido, false caso contrário.</returns>
+    public static bool Validar(CadastroPessoaFisica documento)
     {
+        string valor = documento.Numero;
+
         if (string.IsNullOrWhiteSpace(valor))
             return false;
 
@@ -61,7 +58,7 @@ public class CadastroPessoaFisica : IValidadorSimples, IGeradorSimples
     /// </summary>
     /// <param name="cpfSemDigitosVerificadores">Array do CPF sem os dígitos verificadores.</param>
     /// <returns>O primeiro dígito verificador do CPF.</returns>
-    private static int ObterPrimeiroDigitoVerificador(int[] cpfSemDigitosVerificadores)
+    internal static int ObterPrimeiroDigitoVerificador(int[] cpfSemDigitosVerificadores)
     {
         int soma = 0;
         for (int i = 0; i < cpfSemDigitosVerificadores.Length; i++)
@@ -79,7 +76,7 @@ public class CadastroPessoaFisica : IValidadorSimples, IGeradorSimples
     /// </summary>
     /// <param name="cpfSemDigitosVerificadores">Array do CPF sem os dígitos verificadores.</param>
     /// <returns>O segundo dígito verificador do CPF.</returns>
-    private static int ObterSegundoDigitoVerificador(int[] cpfSemDigitosVerificadores)
+    internal static int ObterSegundoDigitoVerificador(int[] cpfSemDigitosVerificadores)
     {
         int soma = 0;
         for (int i = 0; i < cpfSemDigitosVerificadores.Length; i++)
@@ -90,29 +87,5 @@ public class CadastroPessoaFisica : IValidadorSimples, IGeradorSimples
         int resto = soma % 11;
         int segundoDigitoVerificador = resto < 2 ? 0 : 11 - resto;
         return segundoDigitoVerificador;
-    }
-
-    /// <summary>
-    /// Gera um número de CPF válido.
-    /// </summary>
-    /// <returns>Um número de CPF válido.</returns>
-    public string Gerar()
-    {
-        Random random = new();
-
-        int[] cpfArray = new int[11];
-        for (int i = 0; i < 9; i++)
-        {
-            cpfArray[i] = random.Next(0, 9);
-        }
-
-        int primeiroDigito = ObterPrimeiroDigitoVerificador(cpfArray);
-        int segundoDigito = ObterSegundoDigitoVerificador(cpfArray);
-
-        cpfArray[9] = primeiroDigito;
-        cpfArray[10] = segundoDigito;
-
-        string cnpj = string.Join(string.Empty, cpfArray);
-        return cnpj;
     }
 }
