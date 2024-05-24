@@ -1,0 +1,15 @@
+﻿@page "/documentos"
+@using Clientes.Web.Auxiliares.Enumeradores
+@using Clientes.Web.Auxiliares.Componentes.Documentos
+@using Ferramentas.Documentos.CNPJ
+@using Ferramentas.Documentos.CPF
+
+<h3>Documentos</h3>
+
+<div class="container-fluid">
+    <OperacaoDocumento TDocumento="CadastroNacionalPessoaJuridica" TGeracao="GeradorCnpj" TValidacao="ValidadorCnpj" @rendermode="InteractiveServer"></OperacaoDocumento>
+    <OperacaoDocumento TDocumento="CadastroPessoaFisica" TGeracao="GeradorCpf" TValidacao="ValidadorCpf" @rendermode="InteractiveServer"></OperacaoDocumento>
+</div>
+
+@code {
+}

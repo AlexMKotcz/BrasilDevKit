@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.VisualStudio", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clientes.Web.Auxiliares", "src\Clientes\Clientes.Web.Componentes\Clientes.Web.Auxiliares.csproj", "{8AB2F832-FF9D-4011-8C61-954E411BF417}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.Multiplataforma", "src\Clientes\Clientes.Multiplataforma\Clientes.Multiplataforma.csproj", "{A2B25C4A-CCCB-4F48-80A6-41603877F262}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clientes.Multiplataforma", "src\Clientes\Clientes.Multiplataforma\Clientes.Multiplataforma.csproj", "{A2B25C4A-CCCB-4F48-80A6-41603877F262}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +93,7 @@ Global
 		{8AB2F832-FF9D-4011-8C61-954E411BF417}.Release|x86.Build.0 = Release|Any CPU
 		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|arm64.ActiveCfg = Debug|Any CPU
 		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|arm64.Build.0 = Debug|Any CPU
 		{A2B25C4A-CCCB-4F48-80A6-41603877F262}.Debug|x86.ActiveCfg = Debug|Any CPU
