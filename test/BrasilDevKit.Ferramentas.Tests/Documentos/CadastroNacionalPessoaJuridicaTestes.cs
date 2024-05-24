@@ -31,7 +31,7 @@ public class CadastroNacionalPessoaJuridicaTestes
     public void Validar_DeveRetornarCorretamente(string numero, bool resultadoEsperado)
     {
         // Arrange
-        CadastroNacionalPessoaJuridica documento = new(numero);
+        CadastroNacionalPessoaJuridica documento = new() { Numero = numero };
 
         // Act
         bool result = ValidadorCnpj.Validar(documento);

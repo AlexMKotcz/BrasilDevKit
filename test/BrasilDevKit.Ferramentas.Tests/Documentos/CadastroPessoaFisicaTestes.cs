@@ -32,7 +32,7 @@ public sealed class CadastroPessoaFisicaTestes
     public void Validar_DeveRetornarCorretamente(string numero, bool resultadoEsperado)
     {
         // Arrange
-        CadastroPessoaFisica documento = new(numero);
+        CadastroPessoaFisica documento = new() { Numero = numero };
 
         // Act
         bool result = ValidadorCpf.Validar(documento);
