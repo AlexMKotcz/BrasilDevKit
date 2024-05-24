@@ -1,49 +1,89 @@
 ﻿@using System.ComponentModel.DataAnnotations
-@rendermode InteractiveServer
+@using BrasilDevKit.Ferramentas.Auxiliares
+@using BrasilDevKit.Ferramentas.Auxiliares.Extensoes
+@using BrasilDevKit.Ferramentas.Documentos
+
+@typeparam TDocumento where TDocumento : IDocumentoBase, new()
+@typeparam TValidacao where TValidacao : IValidadorDocumento<TDocumento>
+@typeparam TGeracao where TGeracao : IGeradorDocumento<TDocumento>
 
 <div class="container-fluid">
     <div class="text-center mt-4 mb-2">
-        <h4>@TipoDocumento.ObterDescricao()</h4>
+        <h4>@TDocumento.NomeAbreviadoDocumento - @TDocumento.NomeOficialDocumento</h4>
     </div>
     <div class="row justify-content-between">
         <div class="col-md-5 p-2 border">
             <div class="text-center m-2 mb-5">
-                <h5>Validar documento</h5>
-                <InputText id="documento" @bind-Value="Documento" class="form-control w-50 mx-auto mt-3" placeholder="@TipoDocumento.ObterDescricao()" />
-                <button type="submit" class="btn btn-primary mx-auto my-2" @onclick="ValidarDocumento">Validar</button>
+                <h5>Gerar documento</h5>
+                <button type="submit" class="btn btn-primary mx-auto mt-3" @onclick="GerarDocumento">Gerar</button>
+                <div class="form-check form-switch mx-auto my-3">
+                    <input class="form-check-input me-1" type="checkbox" id="chkGerarComPontuacao" @bind="GerarComPontuacao" style="float:none" />
+                    <label class="form-check-label" for="chkGerarComPontuacao">
+                        Gerar com pontuação?
+                    </label>
+                </div>
 
-                @if (!string.IsNullOrEmpty(ResultadoValidacao))
+                @if (!string.IsNullOrEmpty(ResultadoGeracao))
                 {
-                    <h6>Resultado: @ResultadoValidacao</h6>
+                    <div class="alert alert-primary">
+                        <h6>Documento gerado: @ResultadoGeracao</h6>
+                    </div>
                 }
+
+                <Spinner Condicao="@CarregandoGeracao" />
             </div>
         </div>
         <div class="col-md-5 p-2 border">
             <div class="text-center m-2 mb-5">
-                <h5>Gerar documento</h5>
-                <button type="submit" class="btn btn-primary mx-auto mt-3" @onclick="GerarDocumento">Gerar</button>
-                @if (!string.IsNullOrEmpty(ResultadoGeracao))
+                <h5>Validar documento</h5>
+                <InputText id="documento" @bind-Value="NumeroDocumento" class="form-control w-50 mx-auto mt-3" placeholder="@TDocumento.NomeAbreviadoDocumento" />
+                <button type="submit" class="btn btn-primary mx-auto my-2" @onclick="ValidarDocumento">Validar</button>
+
+                @if (ResultadoValidacao.HasValue)
                 {
-                    <h6>Resultado:</h6>
-                    <input type="text" disabled readonly @bind-value="ResultadoGeracao" class="form-control mx-auto my-2 w-50" />
+                    <div class="alert alert-@(ResultadoValidacao.Value ? "success" : "danger")">
+                        <h6>Documento válido: @ResultadoValidacao.Value.ParaSimNao()</h6>
+                    </div>
                 }
+                <Spinner Condicao="@CarregandoValidacao" />
             </div>
         </div>
     </div>
 </div>
 
 @code {
-    [Parameter] public TipoDocumento TipoDocumento { get; set; }
+    private bool? ResultadoValidacao { get; set; } = null;
+    private string NumeroDocumento { get; set; } = string.Empty;
+    private bool CarregandoValidacao { get; set; } = false;
 
-    public string ResultadoValidacao { get; set; } = string.Empty;
-    public string ResultadoGeracao { get; set; } = string.Empty;
+    private string ResultadoGeracao { get; set; } = string.Empty;
+    private bool GerarComPontuacao { get; set; } = true;
+    private bool CarregandoGeracao { get; set; } = false;
 
-    public string Documento { get; set; } = string.Empty;
-
-    public void ValidarDocumento()
+    private async void ValidarDocumento()
     {
+        CarregandoValidacao = true;
+
+        await Esperas.TaskEsperaCurta;
+
+        TDocumento documento = new() { Numero = NumeroDocumento };
+        ResultadoValidacao = TValidacao.Validar(documento);
+
+        CarregandoValidacao = false;
+
+        StateHasChanged();
     }
-    public void GerarDocumento()
+    private async void GerarDocumento()
     {
+        CarregandoGeracao = true;
+
+        await Esperas.TaskEsperaCurta;
+
+        TDocumento documento = TGeracao.Gerar();
+        ResultadoGeracao = GerarComPontuacao ? documento.NumeroFormatado : documento.Numero;
+
+        CarregandoGeracao = false;
+
+        StateHasChanged();
     }
 }

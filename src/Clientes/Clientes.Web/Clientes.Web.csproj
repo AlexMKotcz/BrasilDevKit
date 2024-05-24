@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BrasilDevKit.Ferramentas\BrasilDevKit.Ferramentas.csproj" />
     <ProjectReference Include="..\Clientes.Web.Componentes\Clientes.Web.Auxiliares.csproj" />
   </ItemGroup>
 

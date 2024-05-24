@@ -1,0 +1,41 @@
+﻿@if (Condicao)
+{
+    string? tamanho = Tamanho != TamanhoSpinner.Normal ? ((int)Tamanho).ToString() : null;
+    string estilo = !string.IsNullOrEmpty(tamanho) ? $"width: {tamanho}rem; height: {tamanho}rem;" : string.Empty;
+
+    <div class="text-center">
+        <div class="spinner-border text-primary m-5" style="@estilo" role="status" />
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public TamanhoSpinner Tamanho { get; set; } = TamanhoSpinner.Normal;
+
+    [Parameter]
+    public bool Condicao { get; set; } = true;
+
+    /// <summary>
+    /// Enumerador de tamanho do spinner
+    /// </summary>
+    public enum TamanhoSpinner
+    {
+        /// <summary>
+        /// Tamanho da parent-div
+        /// </summary>
+        Normal,
+        /// <summary>
+        /// 2rem
+        /// </summary>
+        Pequeno = 2,
+        /// <summary>
+        /// 5rem
+        /// </summary>
+        Medio = 5,
+        /// <summary>
+        /// 10rem
+        /// </summary>
+        Grande = 10
+    }
+}
