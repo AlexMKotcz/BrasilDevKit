@@ -1,6 +1,6 @@
-namespace BrasilDevKit.Ferramentas.Auxiliares;
+namespace BrasilDevKit.Ferramentas.Auxiliares.Extensoes;
 
-internal static class ExtensoesString
+public static class ExtensoesString
 {
     /// <summary>
     /// Verifica se todos os dígitos de uma string são iguais.

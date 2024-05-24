@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace Clientes.Web.Auxiliares.Extensoes;
+namespace BrasilDevKit.Ferramentas.Auxiliares.Extensoes;
 public static class ExtensoesEnum
 {
     public static string ObterDescricao<T>(this T valorEnum) where T : struct
