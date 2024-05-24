@@ -1,9 +1,9 @@
 ﻿@using System.ComponentModel.DataAnnotations
-@using BrasilDevKit.Ferramentas.Auxiliares
-@using BrasilDevKit.Ferramentas.Auxiliares.Extensoes
-@using BrasilDevKit.Ferramentas.Documentos
+@using Ferramentas.Auxiliares
+@using Ferramentas.Auxiliares.Extensoes
+@using Ferramentas.Documentos
 
-@typeparam TDocumento where TDocumento : IDocumentoBase, new()
+@typeparam TDocumento where TDocumento : IDocumento, new()
 @typeparam TValidacao where TValidacao : IValidadorDocumento<TDocumento>
 @typeparam TGeracao where TGeracao : IGeradorDocumento<TDocumento>
 

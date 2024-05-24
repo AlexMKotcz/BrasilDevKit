@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BrasilDevKit.Ferramentas\BrasilDevKit.Ferramentas.csproj" />
+    <ProjectReference Include="..\..\Ferramentas\Ferramentas.csproj" />
   </ItemGroup>
 
 </Project>
