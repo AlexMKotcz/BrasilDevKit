@@ -1,9 +1,4 @@
-﻿using ObjCRuntime;
-
-using UIKit;
-
-using Clientes.Multiplataforma.Platforms.MacCatalyst;
-using Clientes.Multiplataforma;
+﻿using UIKit;
 
 namespace Clientes.Multiplataforma.Platforms.MacCatalyst;
 public class Program

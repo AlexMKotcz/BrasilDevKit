@@ -1,6 +1,4 @@
-﻿using Ferramentas.Documentos;
-
-namespace Ferramentas.Documentos.CPF;
+﻿namespace Ferramentas.Documentos.CPF;
 
 /// <summary>
 /// Classe responsável por gerar um CPF.

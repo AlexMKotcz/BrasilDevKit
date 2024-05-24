@@ -1,9 +1,4 @@
-﻿using ObjCRuntime;
-
-using UIKit;
-
-using Clientes.Multiplataforma.Platforms.iOS;
-using Clientes.Multiplataforma;
+﻿using UIKit;
 
 namespace Clientes.Multiplataforma.Platforms.iOS;
 public class Program

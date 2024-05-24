@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Runtime;
-using Clientes.Multiplataforma;
 
 namespace Clientes.Multiplataforma.Platforms.Android;
 [Application]

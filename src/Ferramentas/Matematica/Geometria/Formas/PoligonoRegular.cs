@@ -1,5 +1,3 @@
-using Ferramentas.Matematica.Geometria;
-
 namespace Ferramentas.Matematica.Geometria.Formas;
 
 public class PoligonoRegular(int numeroLados, double lado) : IFormaGeometrica

@@ -1,5 +1,4 @@
 ﻿using Foundation;
-using Clientes.Multiplataforma;
 
 namespace Clientes.Multiplataforma.Platforms.iOS;
 [Register("AppDelegate")]

@@ -1,5 +1,4 @@
 using Ferramentas.Auxiliares.Extensoes;
-using Ferramentas.Documentos;
 
 namespace Ferramentas.Documentos.CPF;
 

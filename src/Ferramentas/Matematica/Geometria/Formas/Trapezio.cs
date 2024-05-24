@@ -1,5 +1,3 @@
-using Ferramentas.Matematica.Geometria;
-
 namespace Ferramentas.Matematica.Geometria.Formas;
 
 public class Trapezio(double baseMaior, double baseMenor, double altura) : IFormaGeometrica

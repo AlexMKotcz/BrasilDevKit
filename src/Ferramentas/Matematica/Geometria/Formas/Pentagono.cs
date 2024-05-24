@@ -1,5 +1,3 @@
-using Ferramentas.Matematica.Geometria;
-
 namespace Ferramentas.Matematica.Geometria.Formas;
 
 // Implementação de uma forma geométrica específica: Pentágono
