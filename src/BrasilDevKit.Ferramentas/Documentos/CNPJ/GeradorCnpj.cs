@@ -24,6 +24,6 @@ public sealed class GeradorCnpj : IGeradorDocumento<CadastroNacionalPessoaJuridi
         int primeiroDigito = ValidadorCnpj.ObterPrimeiroDigitoVerificador(cnpj);
         int segundoDigito = ValidadorCnpj.ObterSegundoDigitoVerificador(cnpj + primeiroDigito);
 
-        return new CadastroNacionalPessoaJuridica(cnpj+primeiroDigito+segundoDigito);
+        return new CadastroNacionalPessoaJuridica() { Numero = cnpj + primeiroDigito + segundoDigito };
     }
 }

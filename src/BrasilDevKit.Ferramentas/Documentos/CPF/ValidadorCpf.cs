@@ -1,4 +1,4 @@
-﻿using BrasilDevKit.Ferramentas.Auxiliares;
+﻿using BrasilDevKit.Ferramentas.Auxiliares.Extensoes;
 
 namespace BrasilDevKit.Ferramentas.Documentos.CPF;
 

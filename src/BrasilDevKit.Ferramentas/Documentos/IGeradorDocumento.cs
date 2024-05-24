@@ -4,7 +4,7 @@
 /// Interface para um gerador de documentos.
 /// </summary>
 /// <typeparam name="T">O tipo do documento.</typeparam>
-public interface IGeradorDocumento<out T> where T : DocumentoBase
+public interface IGeradorDocumento<out T> where T : IDocumentoBase
 {
     /// <summary>
     /// Gera um documento do tipo <typeparamref name="T"/>.

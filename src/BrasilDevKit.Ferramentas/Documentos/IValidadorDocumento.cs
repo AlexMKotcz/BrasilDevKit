@@ -4,7 +4,7 @@ namespace BrasilDevKit.Ferramentas.Documentos;
 /// Interface para um validador de documentos.
 /// </summary>
 /// <typeparam name="T">O tipo de documento a ser validado.</typeparam>
-public interface IValidadorDocumento<in T> where T : DocumentoBase
+public interface IValidadorDocumento<in T> where T : IDocumentoBase
 {
     /// <summary>
     /// Valida um documento.

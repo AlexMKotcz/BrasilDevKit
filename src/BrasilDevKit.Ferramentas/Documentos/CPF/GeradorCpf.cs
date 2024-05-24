@@ -24,6 +24,6 @@ public sealed class GeradorCpf : IGeradorDocumento<CadastroPessoaFisica>
         int primeiroDigito = ValidadorCpf.ObterPrimeiroDigitoVerificador(cpf);
         int segundoDigito = ValidadorCpf.ObterSegundoDigitoVerificador(cpf + primeiroDigito);
 
-        return new CadastroPessoaFisica(cpf + primeiroDigito + segundoDigito);
+        return new CadastroPessoaFisica() { Numero = cpf + primeiroDigito + segundoDigito };
     }
 }
