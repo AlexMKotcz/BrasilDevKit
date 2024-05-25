@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Ferramentas.Auxiliares.Extensoes;
 
 public static class ExtensoesString
@@ -30,5 +32,10 @@ public static class ExtensoesString
     public static string RemoverNaoNumericos(this string valor)
     {
         return Regexes.RegexCaracteresNaoNumericos().Replace(valor, "");
+    }
+
+    public static bool PossuiCaracteresForaDoPadraoDeDocumentos(this string valor)
+    {
+        return Regexes.RegexCaracteresForaDoPadraoDeDocumentos().IsMatch(valor);
     }
 }

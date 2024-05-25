@@ -25,6 +25,7 @@ public sealed class CadastroPessoaFisicaTestes
     [InlineData("53650823039", true)] // CPF válido gerado em um site
     [InlineData("41275087019", true)] // CPF válido gerado em um site
     [InlineData("87266811023", true)] // CPF válido gerado em um site
+    [InlineData("87266811023ABC", true)] // CPF válido + caractere não numérico
     [InlineData("", false)] // String vazia
     [InlineData("1234567", false)] // CPF com menos de 11 dígitos
     [InlineData("11111111111", false)] // CPF com todos os dígitos iguais

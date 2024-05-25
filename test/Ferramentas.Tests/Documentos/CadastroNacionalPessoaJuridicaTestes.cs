@@ -24,6 +24,7 @@ public class CadastroNacionalPessoaJuridicaTestes
     [InlineData("37221764000117", true)] // CNPJ válido gerado em um site
     [InlineData("91427218000182", true)] // CNPJ válido gerado em um site
     [InlineData("72943370000173", true)] // CNPJ válido gerado em um site
+    [InlineData("37221764000117ABC", false)] // CNPJ válido + caractere não numérico
     [InlineData("", false)] // String vazia
     [InlineData("1234567", false)] // CNPJ com menos de 14 dígitos
     [InlineData("11111111111111", false)] // CNPJ com todos os dígitos iguais

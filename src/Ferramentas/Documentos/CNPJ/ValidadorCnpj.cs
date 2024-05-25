@@ -26,7 +26,12 @@ public sealed class ValidadorCnpj : IValidadorDocumento<CadastroNacionalPessoaJu
         if (string.IsNullOrWhiteSpace(documento.Numero))
             return false;
 
-        string valor = documento.Numero.RemoverNaoNumericos();
+        string valor = documento.Numero.Trim();
+
+        if (valor.PossuiCaracteresForaDoPadraoDeDocumentos())
+            return false;
+
+        valor = documento.Numero.RemoverNaoNumericos();
 
         if (valor.Length != 14)
             return false;

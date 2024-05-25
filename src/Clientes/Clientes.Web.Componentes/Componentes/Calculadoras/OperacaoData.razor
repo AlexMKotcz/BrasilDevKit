@@ -1,54 +1,79 @@
 ﻿@using Ferramentas.Matematica.Datas
 
-@rendermode InteractiveServer
+<div class="border mx-auto my-4">
 
-<h5>@TipoCalculo.ObterDescricao()</h5>
+    <h5 class="text-center my-2">@TipoCalculo.ObterDescricao()</h5>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <label for="dataInicial">Data inicial</label>
-            <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial" @bind-Value:after="Calcular" />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label for="dataInicial">Data inicial</label>
+                <InputDate id="dataInicial" class="form-control" @bind-Value="DataInicial" @bind-Value:after="Calcular" />
+            </div>
+
+            @if (TipoCalculo == TipoCalculoData.Diferenca)
+            {
+                <div class="col">
+                    <label for="dataFinal">Data final</label>
+                    <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinalDiferenca" @bind-Value:after="Calcular" />
+                </div>
+            }
+            else if (TipoCalculo == TipoCalculoData.Adicionar || TipoCalculo == TipoCalculoData.Subtrair)
+            {
+                <div class="col">
+                    <label for="diasOperacao">Dias à @(TipoCalculo == TipoCalculoData.Adicionar ? "adicionar" : "subtrair")</label>
+                    <InputNumber id="diasOperacao" class="form-control" @bind-Value="DiasOperacao" @bind-Value:after="Calcular" />
+                </div>
+            }
         </div>
-        @if (TipoCalculo == TipoCalculoData.Diferenca)
-        {
-            <div class="col">
-                <label for="dataFinal">Data final</label>
-                <InputDate id="dataFinal" class="form-control" @bind-Value="DataFinal" @bind-Value:after="Calcular" />
-            </div>
-        }
-        else
-        {
-            <div class="col">
-                <label for="diasOperacao">Dias à @(TipoCalculo == TipoCalculoData.Adicionar ? "adicionar" : "subtrair")</label>
-                <InputNumber id="diasOperacao" class="form-control" @bind-Value="Dias" @bind-Value:after="Calcular" />
-            </div>
-        }
-    </div>
-    <div class="justify-content-center d-flex mt-2">
-        @if (TipoCalculo == TipoCalculoData.Diferenca)
-        {
-            <h6>Diferença de @Dias dias.</h6>
-        }
-        else
-        {
-            <h6>Nova data: @DataFinal.</h6>
-        }
+
+        <div class="justify-content-center d-flex mt-2">
+            @switch (TipoCalculo)
+            {
+                case TipoCalculoData.Diferenca:
+                    <h6>Diferença de @DiasDiferenca dias</h6>
+                    break;
+                case TipoCalculoData.Adicionar:
+                    <h6>Nova data: @DataFinalAdicao</h6>
+                    break;
+                case TipoCalculoData.Subtrair:
+                    <h6>Nova data: @DataFinalSubtracao</h6>
+                    break;
+            }
+        </div>
     </div>
 </div>
-
 
 @code {
     [Parameter]
     public TipoCalculoData TipoCalculo { get; set; }
 
-    const byte diasPadrao = 10;
-
     [SupplyParameterFromForm]
     private DateOnly DataInicial { get; set; } = DateOnly.FromDateTime(DateTime.Today);
-    [SupplyParameterFromForm]
-    private DateOnly DataFinal { get; set; } = DateOnly.FromDateTime(DateTime.Today.AddDays(diasPadrao));
-    private int Dias { get; set; } = diasPadrao;
+
+    const byte diasPadrao = 10;
+
+    private DateOnly DataFinalDiferenca { get; set; } = DateOnly.FromDateTime(DateTime.Today.AddDays(diasPadrao));
+    private int DiasDiferenca { get; set; } = diasPadrao;
+
+    private int DiasOperacao { get; set; } = diasPadrao;
+    private DateOnly DataFinalAdicao { get; set; } = DateOnly.FromDateTime(DateTime.Today.AddDays(diasPadrao));
+    private DateOnly DataFinalSubtracao { get; set; } = DateOnly.FromDateTime(DateTime.Today.AddDays(-diasPadrao));
+
+    private void CalcularDiferencaDatas()
+    {
+        DiasDiferenca = CalculadoraDeData.CalcularDias(DataInicial, DataFinalDiferenca);
+    }
+
+    private void CalcularAdicionarDias()
+    {
+        DataFinalAdicao = CalculadoraDeData.SomarDias(DataInicial, DiasOperacao);
+    }
+
+    private void CalcularSubtrairDias()
+    {
+        DataFinalSubtracao = CalculadoraDeData.SubtrairDias(DataInicial, DiasOperacao);
+    }
 
     private void Calcular()
     {
@@ -65,20 +90,6 @@
                 break;
             default:
                 throw new ArgumentException("Tipo de cálculo inválido.");
-
         }
-    }
-
-    private void CalcularDiferencaDatas()
-    {
-        Dias = CalculadoraDeData.CalcularDias(DataInicial, DataFinal);
-    }
-    private void CalcularAdicionarDias()
-    {
-        DataFinal = CalculadoraDeData.SomarDias(DataInicial, Dias);
-    }
-    private void CalcularSubtrairDias()
-    {
-        DataFinal = CalculadoraDeData.SubtrairDias(DataInicial, Dias);
     }
 }
