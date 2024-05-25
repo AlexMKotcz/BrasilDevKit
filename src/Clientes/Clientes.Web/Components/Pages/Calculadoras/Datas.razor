@@ -5,9 +5,9 @@
 <h3>Calculadora de datas</h3>
 
 <div class="container-fluid">
-    <OperacaoData TipoCalculo="TipoCalculoData.Diferenca" />
-    <OperacaoData TipoCalculo="TipoCalculoData.Adicionar" />
-    <OperacaoData TipoCalculo="TipoCalculoData.Subtrair" />
+    <OperacaoData @rendermode="InteractiveServer" TipoCalculo="TipoCalculoData.Diferenca" />
+    <OperacaoData @rendermode="InteractiveServer" TipoCalculo="TipoCalculoData.Adicionar" />
+    <OperacaoData @rendermode="InteractiveServer" TipoCalculo="TipoCalculoData.Subtrair" />
 </div>
 
 @code {
