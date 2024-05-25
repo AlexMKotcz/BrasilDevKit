@@ -23,10 +23,10 @@ public sealed class ValidadorCpf : IValidadorDocumento<CadastroPessoaFisica>
     /// <returns>True se o CPF possui um número válido, false caso contrário.</returns>
     public static bool Validar(CadastroPessoaFisica documento)
     {
-        string valor = documento.Numero;
-
-        if (string.IsNullOrWhiteSpace(valor))
+        if (string.IsNullOrWhiteSpace(documento.Numero))
             return false;
+
+        string valor = documento.Numero.Trim();
 
         valor = valor.RemoverNaoNumericos();
 
