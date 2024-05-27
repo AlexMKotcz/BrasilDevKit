@@ -8,7 +8,7 @@ BrasilDevKit é um projeto de software que visa auxiliar desenvolvedores brasile
 - Formatadores de texto e código;
 - [Outras funcionalidades a serem adicionadas...].
 
-## Clientes que serão disponibilizados
+### Clientes que serão disponibilizados
 Serão disponibilizados clientes:
 - Windows
 - MacOS
@@ -30,3 +30,9 @@ Este projeto é voltado para a comunidade e contribuições são sempre bem-vind
 
 ## Licença
 Este projeto está licenciado sob a Apache License 2.0.
+
+## Responsabilidade de Uso
+Os conteúdos deste site têm apenas fins informativos e não devem ser considerados completos, atualizados, nem substituem consultas jurídicas, médicas, financeiras ou de outros profissionais. Estes conteúdos são fornecidos sem qualquer tipo de garantia. Qualquer risco decorrente do uso dos conteúdos é assumido exclusivamente pelo usuário. O uso dos conteúdos e funcionalidades, como a geração de números de documentos, é estritamente proibido para fins ilegais ou fraudulentos.
+
+## Concordância com os Termos
+Ao utilizar os conteúdos e ferramentas deste site/aplicativo/ferramenta, o usuário concorda com os termos estabelecidos neste texto.

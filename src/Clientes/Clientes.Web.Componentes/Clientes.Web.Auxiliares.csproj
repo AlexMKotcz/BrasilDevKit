@@ -19,4 +19,10 @@
     <ProjectReference Include="..\..\Ferramentas\Ferramentas.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Componentes\TextoSobre.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
