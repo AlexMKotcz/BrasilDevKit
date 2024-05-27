@@ -3,7 +3,7 @@
 /// <summary>
 /// Interface para um gerador de documentos.
 /// </summary>
-/// <typeparam name="T">O tipo do documento.</typeparam>
+/// <typeparam name="T">O tipo do documento a ser gerado.</typeparam>
 public interface IGeradorDocumento<out T> where T : IDocumento
 {
     /// <summary>
